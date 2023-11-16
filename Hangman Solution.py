@@ -54,22 +54,16 @@ def hangman():
 
         # Keep track of game progress
         word_list = ''
-        
-        # Scenario 1 - When word is still being guessed
-        if guessed == False:
-            for letter in word:
-                if letter in letters_guessed:
-                    word_list += letter
-                else:
-                    word_list += '_ '
-            print(word_list)
+        # Keep track of game progress
+        word_list = ''.join([letter if letter in letters_guessed else '_ ' for letter in word])
+        print(word_list)
 
-        # Scenario 2 - When word has been guessed
+        # Check if word has been completely guessed
         if word_list == word:
             print('\nCongrats, you have guessed the word!')
             guessed = True
 
-        # Scenario 3 - When player is out of lives
+        # Check if player is out of lives
         elif lives == 0:
             print('\nYou are out of guesses, better luck next time.')
             print('The word is ' + word + '.')
