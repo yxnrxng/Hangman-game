@@ -53,8 +53,6 @@ def hangman():
             print("\nThe length of your guess is not the same as the length of the word, please try again.")
 
         # Keep track of game progress
-        word_list = ''
-        # Keep track of game progress
         word_list = ''.join([letter if letter in letters_guessed else '_ ' for letter in word])
         print(word_list)
 
@@ -69,7 +67,6 @@ def hangman():
             print('The word is ' + word + '.')
 
     play_again() # put this out of the while loop
-    
     
 def play_again():
     restart = input('\nWould you like to play again? yes/no: ').lower()
